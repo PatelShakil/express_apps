@@ -6,6 +6,6 @@
 
 > Independent ReactJs or Angular
 
-> Use Template Engine
+> Use Template Engine ThreeJs
 
 > Use Express Static for JAMStack
