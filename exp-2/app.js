@@ -9,6 +9,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("./static"));
 app.use(session({secret:'my-key'}));
 
+app.set("view engine", "ejs");
+app.set("views","./views");
+
+app.get("/data",(req,res)=>{
+    var v1 = 'ABCd Data';
+    var v2 = 223423423;
+    res.render("data",{v1,v2,ar:[12,3,4,34,545,3]});
+});
+
 app.post('/validate',(req,res)=>{
         console.log(req.body);
 const { username, password } = req.body;
