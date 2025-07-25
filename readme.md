@@ -10,3 +10,17 @@
 - We're using ejs for template engine UI
 
 > Use Express Static for JAMStack
+
+## Implementing Layout in EJS
+1> ```<%- include('layout-name') %>```
+
+2> Create a layout.js
+
+````
+<body>
+<%-include()%>
+    <main>
+        <%-body%>
+    </main>
+</body>
+````
