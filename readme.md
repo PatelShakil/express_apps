@@ -24,3 +24,9 @@
     </main>
 </body>
 ````
+### MongoDB
+- Database-Agnostic approach
+  > Abstraction layer of ORM above the native databases.
+
+- Schema - Structure of Collection
+  
