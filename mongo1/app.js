@@ -2,6 +2,7 @@ const mongo = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017';
 let db = null;
 let collection = null;
+
 let client = new mongo(url);
 client.connect()
 .then(()=>{

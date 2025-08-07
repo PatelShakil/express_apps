@@ -4,12 +4,16 @@ const session = require('express-session')
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const {check,validationResult} = require('express-validator');
+const morgan = require('morgan');
+const helmet = require('helmet');
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("./static"));
 app.use(session({secret:'my-key'}));
 
+app.use(morgan('tiny'));
+app.use(helmet())
 
 app.set("view engine", "ejs");
 app.set("views","./views");

@@ -24,9 +24,29 @@
     </main>
 </body>
 ````
-### MongoDB
+## MongoDB
 - Database-Agnostic approach
   > Abstraction layer of ORM above the native databases.
 
 - Schema - Structure of Collection
   
+## Authentication
+
+> StateFul Authentication
+  - Username & Password
+> Stateless Authentication
+  - API Key or JWT token
+
+#### Authentication Protocols
+> Third party authentication
+  - OAuth
+> SSO
+  - Google
+  - Github
+
+### Security API Endpoints
+- Use Helmet.js to secure Express apps by setting various HTTP headers.
+- Use Morgan.js for logging HTTP requests in Express apps.
+- Use Express Validator for validating and sanitizing user input.
+- Use CSRF protection middleware to prevent Cross-Site Request Forgery attacks.
+- Use Rate Limiting middleware to prevent brute-force attacks.

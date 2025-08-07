@@ -3,6 +3,7 @@ const url = 'mongodb://localhost:27017/demo';
 mangoose.connect(url);
 const db = mangoose.connection;
 
+
 db.on("error",(e)=>{
     console.error(e);
 })
