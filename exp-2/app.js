@@ -7,10 +7,13 @@ const {check,validationResult} = require('express-validator');
 const morgan = require('morgan');
 const helmet = require('helmet');
 
+const jwtlib = require('./libs/jwt');
+const jwtMW = require('./middleware/jwt');
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("./static"));
 app.use(session({secret:'my-key'}));
+
 
 app.use(morgan('tiny'));
 app.use(helmet())
@@ -18,7 +21,7 @@ app.use(helmet())
 app.set("view engine", "ejs");
 app.set("views","./views");
 
-app.get("/data",(req,res)=>{
+app.get("/data",jwtMW.verifyToken,(req,res)=>{
     var v1 = 'ABCd Data';
     var v2 = 223423423;
     res.render("data",{v1,v2,ar:[12,3,4,34,545,3]});
@@ -63,8 +66,10 @@ app.post('/validate',(req,res)=>{
 const { username, password } = req.body;
     if (username === 'admin' && password === 'password') {
         req.session.user = {username};
+        const token = jwtlib.signToken(username,"admin");
+        res.cookie('jwt', token, { httpOnly: true, secure: false }); // Set secure to true in production
         res.cookie('sessionId', req.sessionID, { httpOnly: true });
-        res.send('Login successful. Welcome ' + req.session.user.username + '!<br><a href="/">Go to Home</a>');
+        res.send('Login successful. Welcome ' + req.session.user.username + '!<br><a href="/">Go to Home</a><br> Your JWT token : ' + token);
     } else {
         res.status(401).send('Invalid credentials');
     }
@@ -86,6 +91,8 @@ app.get('/logout', (req, res) => {
         res.clearCookie('sessionId');
         res.send('Logged out successfully<br><a href="/">Login again</a>');
     });
+
+    req.cookies.jwt && res.clearCookie('jwt', { httpOnly: true });
 });
 
 app.listen(8000, () => {
