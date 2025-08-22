@@ -50,3 +50,16 @@
 - Use Express Validator for validating and sanitizing user input.
 - Use CSRF protection middleware to prevent Cross-Site Request Forgery attacks.
 - Use Rate Limiting middleware to prevent brute-force attacks.
+
+### Case Studies
+- Google long lived session 
+- How does trivago accesses goibibo api and rates
+- How authentication works in this
+  
+> API Testing
+
+> Documentation Swagger
+
+> OpenAPI Specification (OAS)
+
+> Versioning
