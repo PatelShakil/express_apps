@@ -63,3 +63,17 @@
 > OpenAPI Specification (OAS)
 
 > Versioning
+
+### Node Utility
+- `npx` ( Node Package Execute)
+- `npm` ( Node Package Manager)
+- `nvm` ( Node Version Manager)
+- `openssl` ( Secure Sockets Layer)
+
+### Best Practices
+- Folder Structure
+- Credential Stores ( `git-secret` , `node-valut` )
+
+### JS Task Runner
+- `gulp` ( Streaming Build System)
+- `grunt` ( JavaScript Task Runner)
