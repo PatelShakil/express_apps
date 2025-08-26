@@ -77,3 +77,8 @@
 ### JS Task Runner
 - `gulp` ( Streaming Build System)
 - `grunt` ( JavaScript Task Runner)
+
+### Network Programming
+- Persistant connection channel from both side
+- WebSocket Working flow
+> ## Open -> Message -> Close -> Error
