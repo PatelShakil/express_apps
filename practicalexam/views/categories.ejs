@@ -1,0 +1,17 @@
+<h2>Category List</h2>
+<form action="/categories/add" method="POST">
+  <input type="text" name="name" placeholder="New Category" required>
+  <button type="submit">Add</button>
+</form>
+
+<ul>
+  <% categories.forEach(cat => { %>
+    <li>
+      <%= cat.name %> 
+      <a href="/categories/edit/<%= cat._id %>">Edit</a> |
+      <a href="/categories/delete/<%= cat._id %>">Delete</a>
+    </li>
+  <% }) %>
+</ul>
+
+<a href="/logout">Logout</a>

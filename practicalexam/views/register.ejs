@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form action="/register" method="POST">
+    <input type="text" name="name" placeholder="Name" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="text" name="phone" placeholder="Phone No" required><br>
+
+    Gender:
+    <input type="radio" name="gender" value="Male" required> Male
+    <input type="radio" name="gender" value="Female" required> Female <br>
+
+    Hobbies:
+    <input type="checkbox" name="hobbies" value="Reading"> Reading
+    <input type="checkbox" name="hobbies" value="Sports"> Sports
+    <input type="checkbox" name="hobbies" value="Music"> Music <br>
+
+    Select Field:
+    <select name="field" required>
+      <option value="">-- Select Field --</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="IT">IT</option>
+      <option value="Electronics">Electronics</option>
+    </select><br>
+
+    <input type="password" name="password" placeholder="Password" required><br>
+    <input type="password" name="confirmPassword" placeholder="Confirm Password" required><br>
+
+    <button type="submit">Register</button>
+  </form>
+  <br>
+  <a href="/login">Already have an account? Login</a>
+</body>
+</html>

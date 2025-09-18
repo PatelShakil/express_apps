@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+<body>
+    <script>
+        const ws = new WebSocket("ws://localhost:3000")
+
+        ws.onopen = ()=>{
+            document.getElementById("chat").innerHTML += "----Connected----<br>";
+        }
+
+        ws.onmessage = (event) =>{
+                        document.getElementById("chat").innerHTML += event.data + "<br>";
+        }
+
+        function sendMessage(){
+            const msg = document.getElementById("msgIp").value;
+            ws.send(msg);
+            document.getElementById("msgIp").value="";
+
+        }
+
+    </script>
+    
+    <p id="chat"></p>
+    <input id="msgIp">
+    <button onclick="sendMessage();">Send</button>
+</body>
+</html>

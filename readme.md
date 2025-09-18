@@ -4,20 +4,23 @@ This repository contains a collection of Express.js applications and examples, c
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Core Concepts](#core-concepts)
-  - [Third-Party Middleware](#third-party-middleware)
-  - [Dynamic Views](#dynamic-views)
-  - [Authentication](#authentication)
-  - [Security](#security)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Key Technologies & Libraries](#key-technologies--libraries)
-- [Node.js Utilities](#nodejs-utilities)
-- [Best Practices](#best-practices)
-- [Task Runners](#task-runners)
-- [Network Programming](#network-programming)
-- [Further Exploration](#further-exploration)
+- [Express.js Learning Playground](#expressjs-learning-playground)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Core Concepts](#core-concepts)
+    - [Third-Party Middleware](#third-party-middleware)
+    - [Dynamic Views](#dynamic-views)
+    - [Authentication](#authentication)
+    - [Security](#security)
+  - [Project Structure](#project-structure)
+  - [Getting Started](#getting-started)
+  - [Key Technologies \& Libraries](#key-technologies--libraries)
+  - [Node.js Utilities](#nodejs-utilities)
+  - [Best Practices](#best-practices)
+  - [Task Runners](#task-runners)
+  - [Network Programming](#network-programming)
+  - [Further Exploration](#further-exploration)
+- [PHP](#php)
 
 ## Introduction
 
@@ -148,3 +151,13 @@ The repository is organized into different Express.js applications, each in its 
 - **API Documentation**: Use tools like Swagger to generate and maintain API documentation.
 - **OpenAPI Specification (OAS)**: A standard, language-agnostic interface to RESTful APIs which allows both humans and computers to discover and understand the capabilities of the service without access to source code, documentation, or through network traffic inspection.
 - **API Versioning**: A practice of managing changes to your API and ensuring that client applications continue to function.
+
+# PHP
+- Intro to **PHP**.
+- `php.ini` config file.
+- `include()` & `require()`.
+- `include_once()` & `require_once()`.
+- Datatypes
+- Operators
+- `static` variables stored **scrypt** scoped or **Page** scope.
+- Arrays

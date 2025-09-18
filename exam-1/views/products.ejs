@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce App</title>
+</head>
+
+<body>
+    <% if(isAdmin) {%>
+        <h1>Add Products</h1>
+        <form action="/product" method="post" enctype="multipart/form-data">
+            Name : <input type="text" name="name" id=""><br>
+            Price : <input type="number" name="price" id=""><br>
+            Photo : <input type="file" name="photo" id=""><br>
+            <input type="submit" value="Add Product">
+        </form>
+        <% } else { %>
+                    <a href="/order">Order Now </a>
+
+            <% } %>
+            <h1>Available Products</h1>
+            <ul>
+                <% products.forEach(async (element)=> { %>
+                    <li><img width="100" src="http://localhost:3000/<%= element.photo %>" alt=<%=element.photo %>> <%= element.name
+                            %> - <%= element.price %>
+                    </li>
+                    <a href="/product/delete?id=<%= element._id %>">Delete </a>
+                    <% }); %>
+            </ul>
+            <form action="/logout"><input type="submit" value="Logout" style="background-color: red;"></form>
+
+</body>
+
+</html>

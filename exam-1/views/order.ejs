@@ -1,0 +1,13 @@
+<form action="/order" method="post">
+    <% products.forEach(p => { %>
+        <div>
+            <input type="checkbox" name="products[<%= p._id %>][id]" value="<%= p._id %>">
+            <%= p.name %> - ₹<%= p.price %>
+            Qty: <input type="number" name="products[<%= p._id %>][quantity]" value="1" min="1">
+        </div>
+    <% }) %>
+    <button type="submit">Place Order</button>
+</form>
+
+
+    <p style="color: red;"><% if(error) { %> <%= error %> <% } %></p>

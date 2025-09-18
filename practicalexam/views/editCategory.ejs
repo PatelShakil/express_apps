@@ -1,0 +1,11 @@
+<h2>Edit Category</h2>
+
+<form action="/categories/update/<%= category._id %>" method="POST">
+  <input type="text" name="name" value="<%= category.name %>" required>
+  <button type="submit">Update</button>
+</form>
+
+<a href="/categories">Back to Category List</a>
+
+
+<a href="/logout">Logout</a>

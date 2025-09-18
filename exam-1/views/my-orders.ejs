@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce App</title>
+</head>
+
+<body>
+     <h1>Your Orders</h1>
+            <ul>
+                <% orders.forEach(async (element)=> { %>
+                    <ul style="border: 5px solid black; margin:5px;border-radius: 10px;">
+                        <% element.products.forEach(async (product)=> { %>
+                            <li>
+  <img width="100" src="http://localhost:3000/<%= product.productId.photo %>" alt=<%=product.productId.photo %>> <%= product.productId.name
+                            %> - <%= product.productId.price %> * <%= product.quantity %> = <%= product.productId.price * product.quantity %>
+                            </li>
+
+                        <% }) %>
+                        <p>Total Amount : <%= element.totalAmount %></p>
+                        <p>Ordered At : <%= element.date %></p>
+
+                        </ul>
+                    <% }); %>
+            </ul>
+            <form action="/logout"><input type="submit" value="Logout" style="background-color: red;"></form>
+
+</body>
+
+</html>
